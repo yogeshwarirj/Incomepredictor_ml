@@ -12,4 +12,3 @@ ucimlrepo>=0.0.7
 imbalanced-learn>=0.12.4
 scikit-learn==1.5.2
 joblib==1.4.2
-sklearn== 1.5.2
