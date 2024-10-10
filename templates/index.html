@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<marque><h1>Income Prediction</h1>	</marque>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    
+    	<label for="age">Age</label>
+		<input type="text" name="age_group" placeholder="Age_group" required="required" />
+		<br>
+		<br>
+		
+        <label for="marital_status">Marital Status</label>
+    		<select id="marital_status" name="marital_status" required="required" placeholder="marital_status" >
+      				<option >Divorced</option>
+      			<option >Married-AF-spouse</option>
+      			<option >Married-civ-spouse</option>
+				<option >Married-spouse-absent</option>
+				<option >Never-married'</option>
+				<option >Separated</option>
+				<option >Widowed</option>
+    		</select>
+    	<br>
+    	<br>
+        
+		
+       <label for="occupation">Occupation</label>
+    		<select id="occupation" name="occupation" required="required" placeholder="occupation" >
+      			<option >Adm-clerical</option>
+      			<option >Armed-Forces</option>
+      			<option >Craft-repair</option>
+      			<option >Exec-managerial</option>
+      			<option >Farming-fishing</option>
+      			<option >Handlers-cleaners</option>
+      			<option >Machine-op-inspct</option>
+      			<option >Other-service</option>
+      			<option >Priv-house-serv</option>
+      			<option >Prof-specialty</option>
+      			<option >Protective-serv</option>
+      			<option >Sales</option>
+      			<option >Tech-support</option>
+      			<option >Transport-moving</option>
+    		</select>
+       <br>
+       <br>
+        
+       <label for="relationship">Relationship</label>
+    		<select id="relationship" name="relationship" required="required">
+      			<option >Husband</option>
+      			<option >Not-in-family</option>
+      			<option >Other-relative</option>
+      			<option >Own-child</option>
+      			<option >Unmarried</option>
+      			<option >Wife</option>
+    		</select>
+    	<br>
+    	<br>
+             
+        <label for="sex">Gender</label>
+    		<select id="sex" name="sex" required="required">
+      			<option >Female</option>
+      			<option >Male</option>
+    		</select>
+    	<br>
+        <br>
+   		<label for="hours_per_week">Hours per Week </label>
+    		<input type="text" id="hours_per_week" name="hours_per_week" required="required">btw:[1-99]
+    		<br>
+        
+        
+        <br>
+		<label for="education_category">Education</label>
+    		<select id="education_category" name="education_category" required="required">
+      			<option >10th</option>
+      			<option >11th</option>
+		      	<option >12th</option>
+		      	<option >1st-4th</option>
+				<option >5th-6th</option>
+      			<option >7th-8th</option>
+      			<option >9th</option>
+      			<option >Assoc-acdm</option>
+      			<option >Assoc-voc</option>
+      			<option >Bachelors</option>
+      			<option >Doctorate</option>
+      			<option >HS-grad</option>
+      			<option >Masters</option>
+      			<option >Preschool</option>
+      			<option >Prof-school</option>
+      			<option >Some-college</option>
+    		</select>    		<br>
+    		<br>
+    		
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
