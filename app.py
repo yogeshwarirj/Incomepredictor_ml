@@ -18,7 +18,7 @@ occupation_mappingm = {'Adm-clerical': 0, 'Armed-Forces': 1, 'Craft-repair': 2,
                        'Exec-managerial': 3, 'Farming-fishing': 4, 'Handlers-cleaners': 5,
                        'Machine-op-inspct': 6, 'Other-service': 7, 'Priv-house-serv': 8,
                        'Prof-specialty': 9, 'Protective-serv': 10, 'Sales': 11,
-                       'Tech-support': 12, 'Transport-moving': 13, 'nan': 14}
+                       'Tech-support': 12, 'Transport-moving': 13}
 relationshipm = {'Husband': 0, 'Not-in-family': 1, 'Other-relative': 2, 'Own-child': 3,
                  'Unmarried': 4, 'Wife': 5}
 sexm = {'Female': 0, 'Male': 1}
