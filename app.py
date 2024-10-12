@@ -2,12 +2,12 @@
 import numpy as np
 
 import streamlit as st
-
+import pickle
 # Load the trained model (same as Flask)
-#model = pickle.load(open('model.pkl', 'rb'))
+model = pickle.load(open('model.pkl', 'rb'))
 # Load the saved model
-import joblib
-model = joblib.load('model.joblib')
+#import joblib
+#model = joblib.load('model.joblib')
 
 # Create mappings (same as Flask)
 age_groupm = {'Adult': 0, 'Senior': 1, 'Teen': 2, 'Young Adult': 3}

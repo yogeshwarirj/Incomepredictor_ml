@@ -11,9 +11,10 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
-#import pickle
+import pickle
 from ucimlrepo import fetch_ucirepo
-import joblib
+
+
 
 # Fetch the Adult dataset
 dataset = fetch_ucirepo('adult')
@@ -109,8 +110,8 @@ rf.fit(X_train, y_train)
 
 # Use the trained model to predict the 'workclass' for rows with missing values
 X_missing = df_missing.drop(columns=['occupation'])  # Features for rows with missing values
-df_missing['occupation'] = rf.predict(X_missing)
-
+#df_missing['occupation'] = rf.predict(X_missing)
+df_missing.loc[:, 'occupation'] = rf.predict(X_missing)
 # Combine the data back together
 df_imputed = pd.concat([df_not_missing, df_missing])
 
@@ -157,10 +158,10 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 model = RandomForestClassifier()
 model.fit(X_train, y_train)
 
-# Saving model to disk
-#pickle.dump(model, open('model.pkl','wb'))
+#Saving model to disk
+pickle.dump(model, open('model.pkl','wb'))
 # Save the model using joblib
-joblib.dump(model, 'model.joblib')
+#joblib.dump(model, 'model.joblib')
 # Loading model to compare the results
 #model = pickle.load(open('model.pkl','rb'))
 #print(model.predict([[2, 9, 6]]))
