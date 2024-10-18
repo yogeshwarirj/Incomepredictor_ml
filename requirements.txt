@@ -1,7 +1,7 @@
 streamlit
 numpy>=1.9.2
 pandas>=1.0.0
-scikit-learn>=1.0.0
+scikit-learn>=1.4.1
 imbalanced-learn>=0.8.0
 ucimlrepo>=0.0.7
 scipy
